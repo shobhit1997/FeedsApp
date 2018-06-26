@@ -39,7 +39,7 @@ app.use(function (req, res, next) {
     // Website you wish to allow to connect
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Expose-Headers', 'x-auth');
-    res.setHeader('Access-Control-Allow-Headers','Origin, X-Requested-With,content-type, Accept');
+    res.setHeader('Access-Control-Allow-Headers','Origin, X-Requested-With,content-type, Accept , x-auth');
     // res.setHeader('Access-Control-Allow-Credentials', true);
 
     next();
