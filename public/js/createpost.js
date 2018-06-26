@@ -8,7 +8,7 @@ e.preventDefault();
       window.location.href='/homepage.html';
     }
   };
-  xhttp.open("POST", "http://localhost:8000/api/post", true);
+  xhttp.open("POST", "https://mighty-cove-44302.herokuapp.com/api/post", true);
   xhttp.setRequestHeader("Content-type", "application/json");
   xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   var jsonObj={
@@ -16,4 +16,4 @@ e.preventDefault();
   	postType : $("#post-type option:selected").text()
   };
   xhttp.send(JSON.stringify(jsonObj));
-});
+}); 

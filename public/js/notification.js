@@ -194,7 +194,7 @@ function followersNotification(){
 	      getOtherNotification(user.follow);
 		}
   	};
-  	xhttp.open("GET", "http://localhost:8000/api/user/me", true);
+  	xhttp.open("GET", "https://mighty-cove-44302.herokuapp.com/api/user/me", true);
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 
@@ -239,7 +239,7 @@ function populateUsers()
 
 	    }
   	};
-  	xhttp.open("GET", "http://localhost:8000/api/users", true);
+  	xhttp.open("GET", "https://mighty-cove-44302.herokuapp.com/api/users", true);
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 
@@ -258,7 +258,7 @@ function getFollowerName(id,followers)
 				scrollToBottom();
 	    }
   	};
-  	xhttp.open("GET", "http://localhost:8000/api/user/"+id, true);
+  	xhttp.open("GET", "https://mighty-cove-44302.herokuapp.com/api/user/"+id, true);
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 
@@ -280,7 +280,7 @@ function populatePost(follow) {
 
 	    }
   	};
-  	xhttp.open("GET", "http://localhost:8000/api/post/all", true);
+  	xhttp.open("GET", "https://mighty-cove-44302.herokuapp.com/api/post/all", true);
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 
@@ -320,7 +320,7 @@ function getUserName(post,status,id)
 
 	    }
   	};
-  	xhttp.open("GET", "http://localhost:8000/api/user/"+id, true);
+  	xhttp.open("GET", "https://mighty-cove-44302.herokuapp.com/api/user/"+id, true);
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 
@@ -335,7 +335,7 @@ function likePost(post)
 	     	jQuery('#'+post._id+"-like").html(this.responseText);
 	    }
   	};
-  	xhttp.open("POST", "http://localhost:8000/api/post/like/"+post._id, true);
+  	xhttp.open("POST", "https://mighty-cove-44302.herokuapp.com/api/post/like/"+post._id, true);
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 }
@@ -348,7 +348,7 @@ function sharePost(post)
 	     	jQuery('#'+post._id+"-share").html(this.responseText);
 	    }
   	};
-  	xhttp.open("POST", "http://localhost:8000/api/post/share/"+post._id, true);
+  	xhttp.open("POST", "https://mighty-cove-44302.herokuapp.com/api/post/share/"+post._id, true);
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 }
@@ -361,7 +361,7 @@ function followUser(user)
 	     	jQuery('#'+user._id+"-follow").html(this.responseText);
 	    }
   	};
-  	xhttp.open("POST", "http://localhost:8000/api/user/follow/"+user._id, true);
+  	xhttp.open("POST", "https://mighty-cove-44302.herokuapp.com/api/user/follow/"+user._id, true);
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 }
@@ -376,7 +376,7 @@ function populateLikes(follow){
 	     	findsharedPost(user._id);
 	    }
   	};
-  	xhttp.open("GET", "http://localhost:8000/api/user/"+user, true);
+  	xhttp.open("GET", "https://mighty-cove-44302.herokuapp.com/api/user/"+user, true);
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
   });
@@ -394,8 +394,8 @@ var params=jQuery.deparam(window.location.search);
 	    }
 	};
   	
-  	// console.log("http://localhost:8000/api/post/?type="+params.type);
-  	xhttp.open("GET", "http://localhost:8000/api/post/?type=like&id="+id, true);	
+  	// console.log("https://mighty-cove-44302.herokuapp.com/api/post/?type="+params.type);
+  	xhttp.open("GET", "https://mighty-cove-44302.herokuapp.com/api/post/?type=like&id="+id, true);	
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 }
@@ -412,8 +412,8 @@ var params=jQuery.deparam(window.location.search);
 	    }
 	};
   	
-  	// console.log("http://localhost:8000/api/post/?type="+params.type);
-  	xhttp.open("GET", "http://localhost:8000/api/post/?type=share&id="+id, true);	
+  	// console.log("https://mighty-cove-44302.herokuapp.com/api/post/?type="+params.type);
+  	xhttp.open("GET", "https://mighty-cove-44302.herokuapp.com/api/post/?type=share&id="+id, true);	
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 }

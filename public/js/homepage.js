@@ -214,7 +214,7 @@ function populateUsers()
 
 	    }
   	};
-  	xhttp.open("GET", "http://localhost:8000/api/users", true);
+  	xhttp.open("GET", "https://mighty-cove-44302.herokuapp.com/api/users", true);
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 
@@ -231,7 +231,7 @@ function populatePost() {
 
 	    }
   	};
-  	xhttp.open("GET", "http://localhost:8000/api/post/all", true);
+  	xhttp.open("GET", "https://mighty-cove-44302.herokuapp.com/api/post/all", true);
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 
@@ -273,7 +273,7 @@ function getUserName(post)
 
 	    }
   	};
-  	xhttp.open("GET", "http://localhost:8000/api/user/"+post.createdBy, true);
+  	xhttp.open("GET", "https://mighty-cove-44302.herokuapp.com/api/user/"+post.createdBy, true);
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 
@@ -287,7 +287,7 @@ function likePost(post)
 	     	jQuery('#'+post._id+"-like").html(this.responseText);
 	    }
   	};
-  	xhttp.open("POST", "http://localhost:8000/api/post/like/"+post._id, true);
+  	xhttp.open("POST", "https://mighty-cove-44302.herokuapp.com/api/post/like/"+post._id, true);
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 }
@@ -300,7 +300,7 @@ function sharePost(post)
 	     	jQuery('#'+post._id+"-share").html(this.responseText);
 	    }
   	};
-  	xhttp.open("POST", "http://localhost:8000/api/post/share/"+post._id, true);
+  	xhttp.open("POST", "https://mighty-cove-44302.herokuapp.com/api/post/share/"+post._id, true);
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 }
@@ -313,7 +313,7 @@ function followUser(user)
 	     	jQuery('#'+user._id+"-follow").html(this.responseText);
 	    }
   	};
-  	xhttp.open("POST", "http://localhost:8000/api/user/follow/"+user._id, true);
+  	xhttp.open("POST", "https://mighty-cove-44302.herokuapp.com/api/user/follow/"+user._id, true);
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 }

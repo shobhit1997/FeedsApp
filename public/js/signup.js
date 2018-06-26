@@ -16,7 +16,7 @@ e.preventDefault();
       window.location.href='/homepage.html';
     }
   };
-  xhttp.open("POST", "http://localhost:8000/api/signup", true);
+  xhttp.open("POST", "https://mighty-cove-44302.herokuapp.com/api/signup", true);
   xhttp.setRequestHeader("Content-type", "application/json");
   var jsonObj={
     name : jQuery("[name='name']").val(),
