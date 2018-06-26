@@ -267,6 +267,20 @@ function sharePost(post)
   	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
   	xhttp.send();
 }
+function followUser(user)
+{
+	var xhttp = new XMLHttpRequest();
+  	xhttp.onreadystatechange = function() {
+	    if (this.readyState == 4 && this.status == 200) {
+	     	// console.log('liked');
+	     	jQuery('#'+user._id+"-follow").html(this.responseText);
+	    }
+  	};
+  	xhttp.open("POST", "https://mighty-cove-44302.herokuapp.com/api/user/follow/"+user._id, true);
+  	xhttp.setRequestHeader("x-auth", localStorage.getItem('x-auth'));
+  	xhttp.send();
+}
+
 function populateUsers()
 {
 	var xhttp = new XMLHttpRequest();

@@ -50,18 +50,17 @@
 
 <script id="user-template" type="text/template">
 <li class="user">
-	<div class="message__title">
+	<div class="message__title" style="display:inline-block;">
 		<h4>{{name}}</h4>
 	</div>
-	<div class="message__body">
+	<div  style="display:inline-block;">
 		<button id="{{follow-id}}">Follow</button>
 	</div>
-	<div>
+	<div class="message__body">
 		<p>{{followers}}</p>
 	</div>
 </li>	
 </script>
-
 <!-- <script type="text/javascript" src="/socket.io/socket.io.js"></script> -->
 <script type="text/javascript" src="/js/libs/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="/js/libs/moment.js"></script>
