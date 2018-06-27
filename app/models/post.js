@@ -39,10 +39,31 @@ var PostSchema 	= new Schema({
 		type : Number,
 		required : true
 	},
-	commentedBy : [CommentSchema]
-
+	commentedBy : [CommentSchema],
+	stats :{
+		likes : {
+			type:Number,
+			default:0
+		},
+		shares :{
+			type : Number,
+			default: 0
+		}
+	}
 });
 
-
+PostSchema.pre('save',function(next){
+	post=this;
+	if(post.isModified('likedBy')||post.isModified('sharedBy'))
+	{
+		post.stats.likes=post.likedBy.length;
+		post.stats.shares=post.sharedBy.length;
+		next();
+	}
+	else
+	{
+		next();
+	}
+});
 module.exports = mongoose.model('Post',PostSchema);
 
